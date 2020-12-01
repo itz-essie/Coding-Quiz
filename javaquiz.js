@@ -37,56 +37,82 @@ document.getElementById("startBtn").addEventListener("click", function () {
     questionButtons.setAttribute("class", "btn");
     questionButtons.textContent = questions[currentQuestion].answers[i];
     document.querySelector(".container").appendChild(questionButtons);
+    
+}
+
   }
-});
+  
+);
+
+
+
+/*  Add listener for the next question button
+$('#next-question-button').click(function() {
+  if (current_question_index < self.questions.length - 1) {
+    current_question_index++;
+    change_question();
+  } 
+  */
+
+  /* on submit, show results 
+  submitButton.onclick = function(){ showResults(questions, quizContainer, resultsContainer); }
+*/
 
 // create questions here
 let questions = [
   {
     q: "Hyper Text Markup Language Stand For?",
-    answers: ["JavaScript", "XHTML", "CSS", "HTML"],
-    correctAnswer: "D",
+    answers: [
+    'JavaScript', 
+    'XHTML', 
+    'CSS',
+    'HTML'],
+    correctAnswer: 'D'
   },
   {
     q: "Which language is used for styling web pages?",
-    answers: ["HTML", "JQuery", "CSS", "XML"],
-    correctAnswer: "C",
+    answers: [
+    'HTML', 
+    'JQuery', 
+    'CSS', 
+    'XML'],
+    correctAnswer: 'C'
   },
   {
-    q:
-      "What tag can be used to insert a line break or blank line in an HTML document?",
-    A: "<title>",
-    B: "<head>",
-    C: "<body>",
-    D: "<br>",
-    answer: "D",
+    q: "What tag can be used to insert a line break or blank line in an HTML document?",
+    answers: [
+    '<title>',
+    '<head>',
+    '<body>',
+    '<br>'],
+    correctAnswer: 'D'
   },
   {
-    q:
-      "What declaration MUST be included as the first item in an HTML document before the tag and is used to provide instructions to the web browser?",
-    A: "<!DOCTYPE>",
-    B: "<code>",
-    C: "<embed>",
-    D: "<caption>",
-    answer: "A",
+    q: "What declaration MUST be included as the first item in an HTML document before the tag and is used to provide instructions to the web browser?",
+    answers: [
+    '<!DOCTYPE>',
+    '<code>',
+    '<embed>',
+    '<caption>'],
+    correctAnswer: 'A'
   },
   {
-    q:
-      "What is a JavaScript element that represents either TRUE or FALSE values?",
-    A: "Condition",
-    B: "Boolean",
-    C: "Funtion",
-    D: "String",
-    answer: "B",
+    q: "What is a JavaScript element that represents either TRUE or FALSE values?",
+    answers: [
+    'Condition',
+    'Boolean',
+    'Funtion',
+    'String'],
+    correctAnswer: 'B'
   },
   {
-    q:
-      "What is the type of loop that continues through a block of code as long as the specified condition remains TRUE?",
-    A: "Conditional Loop",
-    B: "Else Loop",
-    C: "While Loop",
-    D: "For Loop",
-    answer: "C",
+    q: "What is the type of loop that continues through a block of code as long as the specified condition remains TRUE?",
+    answers: [
+    'Conditional Loop',
+    'Else Loop',
+    'While Loop',
+    'For Loop'],
+    correctAnswer: 'C'
   },
 ];
 
