@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
     <title>Coding Quiz</title>
-</head>
-    <body>
-        <h4>Time: <span id="count">60</span></h4>
-        <div class="container">
-        <div id= "countdown"></div>
-            <h1>Coding Quiz Challenge</h1>
-            <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your time by 10 seconds. Good luck!</p>
-            <button type="button" id= "startBtn">Start Quiz</button>
-        </div>
-        <button  id="highscoresBtn">High Scores</button>
-        <button id="next-question-button">Next Question</button>
-        <button id="prev-question-button">Previous</button>
-<script src="./javaquiz.js"></script>    
-    </body>
+  </head>
+  <body>
+    <h4>Time: <span id="count">60</span></h4>
+    <div class="container">
+      <div id="countdown"></div>
+      <h1>Coding Quiz Challenge</h1>
+      <p id="instructions">
+        Try to answer the following code-related questions within the time
+        limit. Keep in mind that incorrect answers will penalize your time by 10
+        seconds. Good luck!
+      </p>
+      <button type="button" id="startBtn">Start Quiz</button>
+    </div>
+    <button id="highscoresBtn">High Scores</button>
+    <button id="next-question-button">Next Question</button>
+    <button id="prev-question-button">Previous</button>
+    <script src="./javaquiz.js"></script>
+  </body>
 </html>
