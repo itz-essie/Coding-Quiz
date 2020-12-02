@@ -47,36 +47,36 @@ let questions = [
   {
     q: "Hyper Text Markup Language Stand For?",
     choices: ["JavaScript", "XHTML", "CSS", "HTML"],
-    correctAnswer: "HTML",
+    correctAnswer: 3,
   },
   {
     q: "Which language is used for styling web pages?",
     choices: ["HTML", "JQuery", "CSS", "XML"],
-    correctAnswer: "CSS",
+    correctAnswer: 2,
   },
   {
     q:
       "What tag can be used to insert a line break or blank line in an HTML document?",
     choices: ["<title>", "<head>", "<body>", "<br>"],
-    correctAnswer: "<br>",
+    correctAnswer: 3,
   },
   {
     q:
       "What declaration MUST be included as the first item in an HTML document before the tag and is used to provide instructions to the web browser?",
     choices: ["<!DOCTYPE>", "<code>", "<embed>", "<caption>"],
-    correctAnswer: "<!DOCTYPE>",
+    correctAnswer: 0,
   },
   {
     q:
       "What is a JavaScript element that represents either TRUE or FALSE values?",
     choices: ["Condition", "Boolean", "Funtion", "String"],
-    correctAnswer: "Boolean",
+    correctAnswer: 1,
   },
   {
     q:
       "What is the type of loop that continues through a block of code as long as the specified condition remains TRUE?",
     choices: ["Conditional Loop", "Else Loop", "While Loop", "For Loop"],
-    correctAnswer: "While Loop",
+    correctAnswer: 2,
   },
 ];
 
