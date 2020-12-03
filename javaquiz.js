@@ -10,7 +10,7 @@ var counterDiv = document.getElementById("counter");
 let currentQuestion = 0;
 var score = 0;
 var instructionsDiv = document.getElementById("instructions");
-var wrongAnswer= 10
+var wrongAnswer = 10;
 
 // Start button and timer begins
 document.getElementById("startBtn").addEventListener("click", function () {
@@ -27,51 +27,58 @@ document.getElementById("startBtn").addEventListener("click", function () {
     if (timeleft <= 0) {
       clearInterval(downloadTimer);
       document.getElementById("count").innerHTML = "Time is up!";
+      
+      //Timer stops and user is no longer able to select answers
+      // // $("questionContainer").remove();
+      // var img = document.createElement("img");
+      // img.src = "./images/timesup.jpg";
+      // var src = document.getElementById("questionContainer");
+      // src.appendChild(img);
     }
   }, 1000);
 
   //Display questions in the container
-  var renderQuestion= function(){
-    document.getElementById("questionContainer").innerHTML=""
-  var h2Tag = document.createElement("h2");
-  h2Tag.textContent = questions[currentQuestion].q;
-  document.querySelector("#questionContainer").appendChild(h2Tag);
+  var renderQuestion = function () {
+    document.getElementById("questionContainer").innerHTML = "";
+    var h2Tag = document.createElement("h2");
+    h2Tag.textContent = questions[currentQuestion].q;
+    document.querySelector("#questionContainer").appendChild(h2Tag);
 
-  for (var i = 0; i < questions[currentQuestion].choices.length; i++) {
-    var questionButtons = document.createElement("button");
-    questionButtons.setAttribute("class", "btn choicesBtn");
-    // questionButtons.setAttribute("class", "btn");
-    questionButtons.textContent = questions[currentQuestion].choices[i];
-    document.querySelector("#questionContainer").appendChild(questionButtons);
-  }
-  const choicesBtn = document.querySelectorAll(".choicesBtn");
-  choicesBtn.forEach(function (button) {
-    button.addEventListener("click", function () {
-      console.log("clicked")
-      var response = this.textContent;
-      if (response === questions[currentQuestion].correctAnswer) {
-        score++;
-        alert("Correct!");
-      } else {
-        timeleft = timeleft - wrongAnswer;
-        timeleft.textContent = timeleft;
-        alert("Wrong Answer!");
-      }
-      if (currentQuestion < lastQuestion) {
-        currentQuestion++;
-        renderQuestion();
-      } else {
-        // alert("Game Over! Your total score is: " + score + "!");
-        var highScoreInput = document.createElement("input");
-        document.querySelector("#questionContainer").appendChild(highScoreInput);
-      }
+    for (var i = 0; i < questions[currentQuestion].choices.length; i++) {
+      var questionButtons = document.createElement("button");
+      questionButtons.setAttribute("class", "btn choicesBtn");
+      questionButtons.textContent = questions[currentQuestion].choices[i];
+      document.querySelector("#questionContainer").appendChild(questionButtons);
+    }
+    const choicesBtn = document.querySelectorAll(".choicesBtn");
+    choicesBtn.forEach(function (button) {
+      button.addEventListener("click", function () {
+        console.log("clicked");
+        var response = this.textContent;
+        if (response === questions[currentQuestion].correctAnswer) {
+          score++;
+          alert("Correct!");
+        } else {
+          timeleft = timeleft - wrongAnswer;
+          timeleft.textContent = timeleft;
+          alert("Wrong Answer!");
+        }
+        if (currentQuestion < lastQuestion) {
+          currentQuestion++;
+          renderQuestion();
+        } else {
+          alert("Game Over! Your total score is: " + score + "!");
+          document.getElementById("questionContainer").innerHTML = "";
+          var highScoreInput = document.createElement("input");
+          document
+            .querySelector("#questionContainer")
+            .appendChild(highScoreInput);
+        }
+      });
     });
-  });
-
   };
- renderQuestion() 
+  renderQuestion();
 });
-
 
 // create questions here
 let questions = [
@@ -111,7 +118,7 @@ let questions = [
   },
 ];
 
-var lastQuestion= questions.length-1;
+var lastQuestion = questions.length - 1;
 
 // This function will check the correct answer against the user choice
 // It will also load the next question, or if it is the last question, will alert game over!
