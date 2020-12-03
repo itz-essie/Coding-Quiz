@@ -27,7 +27,7 @@ document.getElementById("startBtn").addEventListener("click", function () {
     if (timeleft <= 0) {
       clearInterval(downloadTimer);
       document.getElementById("count").innerHTML = "Time is up!";
-      
+
       //Timer stops and user is no longer able to select answers
       // // $("questionContainer").remove();
       // var img = document.createElement("img");
@@ -73,6 +73,12 @@ document.getElementById("startBtn").addEventListener("click", function () {
           document
             .querySelector("#questionContainer")
             .appendChild(highScoreInput);
+
+            //Add a button that says, "Click to Submit High Score- takes user to storage html"
+            // var highScoreInput = document.createElement("btn");
+            // document
+            //   .querySelector("#questionContainer")
+            //   .appendChild(highScoreInput);
         }
       });
     });

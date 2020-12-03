@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Coding Quiz</title>
+</head>
+<body>
+        <div class="clearfix">
+      <div class="container">
+      <div id="countdown"></div>
+      <h1>Coding Quiz Challenge</h1>
+        <form method="POST">
+          <div class="input-group">
+            <label for="firstName">First Name</label>
+            <input type="text" name="firstName" id="firstName" placeholder="Jane" />
+          </div>
+          <div class="input-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" name="lastName" id="lastName" placeholder="Doe" />
+          </div>
+          <div id="msg"></div>
+          <button id="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <script src="./storage.js"></script>
+    <script src="./javaquiz.js"></script>
+  </body>
+</html>

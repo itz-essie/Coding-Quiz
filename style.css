@@ -48,7 +48,7 @@ h4 {
   font-weight: 700;
 }
 
-#startBtn, #choicesBtn {
+#startBtn, .btn {
   padding: 10px 30px;
   background-color: #5f6366;
   color: white;
@@ -56,4 +56,17 @@ h4 {
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
+}
+.btn {
+  padding: 10px 30px;
+  background-color: #5f6366;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  flex-direction: row-reverse;
+  display: flex;
+  margin-bottom: 10px;
 }
