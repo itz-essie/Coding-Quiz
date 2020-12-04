@@ -4,8 +4,7 @@ var submitButton = document.querySelector("#submit");
 var msgDiv = document.querySelector("#msg");
 var userFirstNameSpan = document.querySelector("#user-first-name");
 var userLastNameSpan = document.querySelector("#user-last-name");
-var userEmailSpan = document.querySelector("#user-email");
-var userPasswordSpan = document.querySelector("#user-password");
+
 
 function displayMessage(type, message) {
   msgDiv.textContent = message;
@@ -21,6 +20,17 @@ submitButton.addEventListener("click", function(event) {
   };
 
   console.log(user);
+  //Get rid of code that gives us an error
+  //Grab user names container
+  var namesContainer= document.getElementById("#namesContainer");
+      //Place it in container
+namesContainer
+
+  
+  //<div> 
+  //New elements and set the text to the name
+  //.appendchild this new element with the name inside
+  //</div>
   
   // validate the fields
   if (user.firstNameInput === "") {
@@ -33,10 +43,10 @@ submitButton.addEventListener("click", function(event) {
     // set new submission
     localStorage.setItem("user", JSON.stringify(user));
     
-    // get most recent submission
-    var lastUser = JSON.parse(localStorage.getItem("user"));
-    userFirstNameSpan.textContent = lastUser.firstName;
-    userLastNameSpan.textContent = lastUser.lastName;
+    // // get most recent submission
+    // var lastUser = JSON.parse(localStorage.getItem("user"));
+    // userFirstNameSpan.textContent = lastUser.firstName;
+    // userLastNameSpan.textContent = lastUser.lastName;
 
   }
 });

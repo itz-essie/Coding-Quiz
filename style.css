@@ -48,7 +48,7 @@ h4 {
   font-weight: 700;
 }
 
-#startBtn, .btn {
+#startBtn, #highscoresBtn {
   padding: 10px 30px;
   background-color: #5f6366;
   color: white;

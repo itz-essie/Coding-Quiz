@@ -16,6 +16,7 @@ var wrongAnswer = 10;
 document.getElementById("startBtn").addEventListener("click", function () {
   instructionsDiv.textContent = "";
   startBtn.style.display = "none";
+  highscoresBtn.style.display= "none";
   var timeleft = 60;
 
   var downloadTimer = setInterval(function seconds() {
@@ -67,12 +68,16 @@ document.getElementById("startBtn").addEventListener("click", function () {
           currentQuestion++;
           renderQuestion();
         } else {
-          alert("Game Over! Your total score is: " + score + "!");
+          alert("You've completed your coding quiz! You scored " + score + "points.");
           document.getElementById("questionContainer").innerHTML = "";
-          var highScoreInput = document.createElement("input");
-          document
-            .querySelector("#questionContainer")
-            .appendChild(highScoreInput);
+
+          
+          // alert("Game Over! Your total score is: " + score + "!");
+          // document.getElementById("questionContainer").innerHTML = "";
+          // var highScoreInput = document.createElement("input");
+          // document
+          //   .querySelector("#questionContainer")
+          //   .appendChild(highScoreInput);
 
             //Add a button that says, "Click to Submit High Score- takes user to storage html"
             // var highScoreInput = document.createElement("btn");
