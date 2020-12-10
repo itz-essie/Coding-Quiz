@@ -22,7 +22,7 @@ submitButton.addEventListener("click", function(event) {
   console.log(user);
   //Get rid of code that gives us an error
   //Grab user names container
-  var namesContainer= document.getElementById("#namesContainer");
+  var namesContainer= document.getElementById("namesContainer");
       //Place it in container
 namesContainer
 
@@ -43,10 +43,10 @@ namesContainer
     // set new submission
     localStorage.setItem("user", JSON.stringify(user));
     
-    // // get most recent submission
-    // var lastUser = JSON.parse(localStorage.getItem("user"));
-    // userFirstNameSpan.textContent = lastUser.firstName;
-    // userLastNameSpan.textContent = lastUser.lastName;
+    // get most recent submission
+    var lastUser = JSON.parse(localStorage.getItem("user"));
+    userFirstNameSpan.textContent = lastUser.firstName;
+    userLastNameSpan.textContent = lastUser.lastName;
 
   }
 });

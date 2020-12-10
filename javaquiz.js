@@ -12,6 +12,65 @@ var score = 0;
 var instructionsDiv = document.getElementById("instructions");
 var wrongAnswer = 10;
 
+var highscoreInput = document.querySelector(".highscoreInput")
+var firstNameInput = document.querySelector("#firstName");
+var lastNameInput = document.querySelector("#lastName");
+var submitButton = document.querySelector("#submit");
+var msgDiv = document.querySelector("#msg");
+var userFirstNameSpan = document.querySelector("#user-first-name");
+var userLastNameSpan = document.querySelector("#user-last-name");
+
+highscoreInput.style.display="none"
+function displayMessage(type, message) {
+  msgDiv.textContent = message;
+  msgDiv.setAttribute("class", type);
+}
+
+submitButton.addEventListener("click", function(event) {
+  event.preventDefault();
+  // create user object from submission
+  var user = {
+    firstName: firstNameInput.value.trim(),
+    lastName: lastNameInput.value.trim(),
+    score: score
+  };
+var highscoresList = JSON.parse(localStorage.getItem("user")) || [];
+highscoresList.push(user)
+
+
+  console.log(user);
+  //Get rid of code that gives us an error
+  //Grab user names container
+  var namesContainer= document.getElementById("namesContainer");
+      //Place it in container
+namesContainer
+
+  
+  //<div> 
+  //New elements and set the text to the name
+  //.appendchild this new element with the name inside
+  //</div>
+  
+  // validate the fields
+  if (user.firstNameInput === "") {
+    displayMessage("error", "First name cannot be blank");
+  } else if (user.lastNameInput === "") {
+    displayMessage("error", "Last name cannot be blank");
+  } else {
+    displayMessage("You have successfully submitted your high score!");
+
+    // set new submission
+    localStorage.setItem("user", JSON.stringify(highscoresList));
+    
+    // get most recent submission
+    // var lastUser = JSON.parse(localStorage.getItem("user"));
+    // userFirstNameSpan.textContent = lastUser.firstName;
+    // userLastNameSpan.textContent = lastUser.lastName;
+
+  }
+});
+
+
 // Start button and timer begins
 document.getElementById("startBtn").addEventListener("click", function () {
   instructionsDiv.textContent = "";
@@ -70,6 +129,8 @@ document.getElementById("startBtn").addEventListener("click", function () {
         } else {
           alert("You've completed your coding quiz! You scored " + score + "points.");
           document.getElementById("questionContainer").innerHTML = "";
+        highscoreInput.style.display="block"
+
 
           
           // alert("Game Over! Your total score is: " + score + "!");

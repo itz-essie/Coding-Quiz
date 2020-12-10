@@ -23,9 +23,25 @@
       </p>
       <button type="button" id="startBtn">Start Quiz</button>
       <a href="./storage.html"   id="highscoresBtn">High Scores</a>
+      <div class="highscoreInput">
+        <form method="POST">
+          <div class="input-group">
+            <label for="firstName">First Name</label>
+            <input type="text" name="firstName" id="firstName" placeholder="Jane" />
+          </div>
+          <div class="input-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" name="lastName" id="lastName" placeholder="Doe" />
+          </div>
+          <div id="msg"></div>
+          <button id="submit">Submit</button>
+        </form>
+        <div id="namesContainer"></div>
+        </div>
       <div id="questionContainer"></div>
     </div>
+
+
     <script src="./javaquiz.js"></script>
-    <script src="./highscore.js"></script>
   </body>
 </html>
